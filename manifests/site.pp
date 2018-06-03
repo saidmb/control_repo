@@ -6,7 +6,7 @@ node default {
   }
 }
 
-/*******************************/
+/*******************************
 
 concat { '/root/README':
   mode  => '0644',
@@ -19,7 +19,7 @@ concat::fragment { 'README_fa':
   content => "CONCAT Function -- another piece a\n",
 }
 
-/*******************************/
+*******************************/
 
 node 'master.puppet.vm' {
   include role::master_server
