@@ -11,9 +11,10 @@ node default {
 concat { '/root/README':
   mode  => '0644',
   owner => 'root',
+  group => 'root',
 }
 
-concat::fragment { 'README':
+concat::fragment { 'README_fa':
   target  => '/root/README',
   content => "CONCAT Function -- another piece a\n",
 }
