@@ -5,6 +5,21 @@ node default {
     owner   => 'root',
   }
 }
+
+/*******************************/
+
+concat { '/root/README':
+  mode  => '0644',
+  owner => 'root',
+}
+
+concat::fragment { 'README':
+  target  => '/root/README',
+  content => "CONCAT Function -- another piece a\n",
+}
+
+/*******************************/
+
 node 'master.puppet.vm' {
   include role::master_server
   file {'/root/README':
